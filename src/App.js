@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import api from './services/api'
+
 function App() {
   return (
     <div className="App">
