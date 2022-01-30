@@ -1,0 +1,60 @@
+.modalBody {
+    background: #313233;
+    position: absolute;
+    z-index: 999;
+    padding: 25px;
+
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.headerModal {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    label {
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+
+        margin-right: 5px;
+    }
+    p {
+        font: 300 18px 'Roboto', sans-serif;
+        color: #fff;
+    }
+}
+
+.listCitys {
+    list-style-type: none;
+
+    li {
+        margin-top: 10px;
+    }
+    li a {
+        font: 600 25px 'Roboto', sans-serif;
+        display: flex;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        border-radius: 5px;
+        transition: 0.3s;
+        padding: 5px 10px;
+        cursor: pointer;
+        
+        &:hover {
+            background: #3D3D3D;
+            box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+        }
+        &:active {
+            background: #3d3d3d80;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1)
+        }
+    }
+}

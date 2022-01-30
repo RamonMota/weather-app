@@ -1,12 +1,19 @@
+import { useState } from 'react';
+import ModalSelectCity from './components/modalSelectCity'
 import logo from './img/iconWeather/Clouds3.svg';
 import './app.scss'
 
 import api from './services/api'
 
+
 function App() {
+  const [openModal, setOpenModal] = useState(false)
+
+  
   return (
     <div className='ContainerBox'>
-      <a className='selectCity'>Calgary</a>
+      { openModal ? <ModalSelectCity onClose={() => setOpenModal(false)}/> : null}
+      <a className='selectCity' onClick={() => setOpenModal(true)}>Calgary</a>
       <div className='displyTemperature'>
         <div className='temperatureVariable'>
           <h3>21</h3>
