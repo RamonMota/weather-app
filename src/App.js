@@ -21,20 +21,27 @@ function App() {
   const [data, setData] = useState({}) 
   const {city} = useCity()
   const [idWeatherType, setIdWeatherType] = useState()
+  
+  
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const apiKey = "f1528275ba90d8b0f63b16b770aecc82"
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&units=metric&appid=${apiKey}`
     
+    setLoading(true); 
     axios.get(url).then((response) => {
       setData(response.data)
       setIdWeatherType(response.data.weather[0].id)
 
+    }).finally(() => {
+      setLoading(false);
     })
-    
   }, [city] )
   
-
+  if (isLoading) {
+    return <div className="circleLoader"></div>
+  }
   return (
       <div className='ContainerBox'>
         {openModal ? <ModalSelectCity onClose={() => setOpenModal(false)}/> : null}

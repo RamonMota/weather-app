@@ -11,8 +11,8 @@ function createWindow () {
   })
 
   mainWindow.loadURL('http://localhost:3000')
-  mainWindow.resizable = false;
-  mainWindow.fullScreen = false
+  // mainWindow.resizable = false;
+  // mainWindow.fullScreen = false
 
   // mainWindow.webContents.openDevTools()
 }

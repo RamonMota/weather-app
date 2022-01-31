@@ -115,3 +115,28 @@ body {
     right: 0;
     left: 0;
 }
+
+.circleLoader {
+    box-sizing: border-box;
+    margin: auto;
+    width: 128px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 16px solid #3D3D3D;
+    border-top-color: #727272;
+    animation: circleLoader 1s linear infinite;
+
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  @keyframes circleLoader {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
