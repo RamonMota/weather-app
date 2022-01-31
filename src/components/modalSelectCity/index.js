@@ -4,7 +4,12 @@ import './styled.scss'
 
 
 function ModalSelectCity({onClose = () => {}}) {
-    const {setCity} = useCity()
+    const {setCities} = useCity()
+
+    const selectCityWeather = (e) => {
+        setCities(e.target.value)
+        onClose()
+    }
 
     return (
         <div className='modalBody'>
@@ -12,21 +17,21 @@ function ModalSelectCity({onClose = () => {}}) {
                 <label></label>
                 <p>Select your city</p>
             </button>
-            <ul className='listCitys'>
+            <ul className='listCities'>
                 <li>
-                    <button onClick={() => setCity('Calgary')}>Calgary</button>
+                    <button value="Amsterdam" onClick={selectCityWeather}>Amsterdam</button>
                 </li>
                 <li>
-                    <button onClick={() => setCity('Vancuver')}>Vancuver</button>
+                    <button value="Vancouver" onClick={selectCityWeather}>Vancouver</button>
                 </li>
                 <li>
-                    <button onClick={() => setCity('Toronto')} >Toronto</button>
+                    <button value="Toronto" onClick={selectCityWeather}>Toronto</button>
                 </li>
                 <li>
-                    <button onClick={() => setCity('João Pessoa')}>João Pessoa</button>
+                    <button value="California" onClick={selectCityWeather}>California</button>
                 </li>
                 <li>
-                    <button onClick={() => setCity('Curitiba')}>Curitiba</button>
+                    <button value="Curitiba" onClick={selectCityWeather}>Curitiba</button>
                 </li>
             </ul>
         </div>
