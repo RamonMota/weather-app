@@ -13,6 +13,8 @@
 .headerModal {
     display: flex;
     align-items: center;
+    background: unset;
+    border: unset;
     cursor: pointer;
 
     label {
@@ -37,7 +39,7 @@
     li {
         margin-top: 10px;
     }
-    li a {
+    li button {
         font: 600 25px 'Roboto', sans-serif;
         display: flex;
         color: #fff;
@@ -46,6 +48,8 @@
         border-radius: 5px;
         transition: 0.3s;
         padding: 5px 10px;
+        background: unset;
+        border: unset;
         cursor: pointer;
         
         &:hover {

@@ -1,29 +1,32 @@
 import React from 'react'
+import {useCity} from '../../context/cityWeather'
 import './styled.scss'
 
+
 function ModalSelectCity({onClose = () => {}}) {
-    console.log("apenas o retorno")
+    const {setCity} = useCity()
+
     return (
         <div className='modalBody'>
-            <a className='headerModal' onClick={onClose}>
+            <button className='headerModal' onClick={onClose}>
                 <label></label>
                 <p>Select your city</p>
-            </a>
+            </button>
             <ul className='listCitys'>
                 <li>
-                    <a>Calgary</a>
+                    <button onClick={() => setCity('Calgary')}>Calgary</button>
                 </li>
                 <li>
-                    <a>Vancuver</a>
+                    <button onClick={() => setCity('Vancuver')}>Vancuver</button>
                 </li>
                 <li>
-                    <a>Toronto</a>
+                    <button onClick={() => setCity('Toronto')} >Toronto</button>
                 </li>
                 <li>
-                    <a>João Pessoa</a>
+                    <button onClick={() => setCity('João Pessoa')}>João Pessoa</button>
                 </li>
                 <li>
-                    <a>Curitiba</a>
+                    <button onClick={() => setCity('Curitiba')}>Curitiba</button>
                 </li>
             </ul>
         </div>
